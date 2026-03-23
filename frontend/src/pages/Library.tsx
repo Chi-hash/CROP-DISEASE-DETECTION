@@ -115,7 +115,6 @@ export default function Library() {
   }, [])
 
   const filtered = diseases.filter(d => {
-    if (d.severity.toLowerCase() === 'none') return false  // hide healthy entries
     const matchCrop = !selectedCrop || d.crop === selectedCrop
     const matchSearch = !search || d.common_name.toLowerCase().includes(search.toLowerCase()) || d.crop.toLowerCase().includes(search.toLowerCase())
     return matchCrop && matchSearch
