@@ -36,10 +36,15 @@ app.add_middleware(
 app.include_router(predict.router)
 app.include_router(diseases.router)
 
-# Serve downloaded disease images as static files
-static_dir = os.path.join(os.path.dirname(__file__), "..", "static")
+# Serve disease images as static files.
+# Checks both the local dev path (backend/static) and the Vercel lambda bundle path.
+_base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+static_dir = os.path.join(_base, "static")
+if not os.path.isdir(static_dir):
+    # Vercel bundles files relative to the repo root inside the lambda
+    static_dir = os.path.join(_base, "..", "static")
 if os.path.isdir(static_dir):
-    app.mount("/static", StaticFiles(directory=static_dir), name="static")
+    app.mount("/static", StaticFiles(directory=os.path.abspath(static_dir)), name="static")
 
 
 @app.get("/health", response_model=HealthResponse, tags=["system"])
