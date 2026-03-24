@@ -22,8 +22,8 @@ export default function Home() {
         </div>
         <div className="relative max-w-lg mx-auto">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-3xl">🌱</span>
-            <h1 className="text-2xl font-bold">CropCare AI</h1>
+            <img src="/leaf-icon.svg" alt="AgriScan" className="w-9 h-9" />
+            <h1 className="text-2xl font-bold">AgriScan</h1>
           </div>
           <p className="text-4xl font-extrabold leading-tight mb-3">
             Diagnose Crop Diseases Instantly
@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* Features - full width so grid-cols-4 has room */}
       <div className="w-full px-4 lg:px-[100px] mb-6">
-        <h2 className="text-lg font-bold text-text-primary mb-3">Why CropCare AI?</h2>
+        <h2 className="text-lg font-bold text-text-primary mb-3">Why AgriScan?</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {features.map(({ icon, title, desc }) => (
             <div key={title} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
@@ -92,7 +92,7 @@ export default function Home() {
         <div className="space-y-3 mb-6">
           {[
             { step: '1', title: 'Photograph the leaf', desc: 'Take a clear, close-up photo of the affected plant leaf' },
-            { step: '2', title: 'Upload to CropCare AI', desc: 'Tap "Scan Your Crop" and select your photo or take one now' },
+            { step: '2', title: 'Upload to AgriScan', desc: 'Tap "Scan Your Crop" and select your photo or take one now' },
             { step: '3', title: 'Get your diagnosis', desc: 'Receive disease name, confidence score, and treatment plan in seconds' },
           ].map(({ step, title, desc }) => (
             <div key={step} className="flex gap-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
@@ -112,7 +112,7 @@ export default function Home() {
           <p className="text-sm text-gray-700 leading-relaxed italic">
             "Democratizing agricultural expertise for the 500 million smallholder farmers who currently have no access to agronomists."
           </p>
-          <p className="text-xs text-primary font-semibold mt-2">CropCare AI Mission</p>
+          <p className="text-xs text-primary font-semibold mt-2">AgriScan Mission</p>
         </div>
       </div>
     </div>

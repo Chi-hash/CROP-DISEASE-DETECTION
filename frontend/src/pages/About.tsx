@@ -2,8 +2,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background pb-20">
       <div className="bg-primary text-white px-6 pt-10 pb-8 text-center">
-        <span className="text-5xl">🌱</span>
-        <h1 className="text-2xl font-bold mt-3">CropCare AI</h1>
+        <img src="/leaf-icon.svg" alt="AgriScan" className="w-16 h-16 mx-auto" />
+        <h1 className="text-2xl font-bold mt-3">AgriScan</h1>
         <p className="text-green-100 text-sm mt-1">Version 1.0 · Hackathon Edition · March 2026</p>
       </div>
 
@@ -11,7 +11,7 @@ export default function About() {
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-text-primary mb-2">Our Mission</h2>
           <p className="text-sm text-gray-700 leading-relaxed">
-            CropCare AI democratises agricultural disease diagnosis for the 500 million+ smallholder
+            AgriScan democratises agricultural disease diagnosis for the 500 million+ smallholder
             farmers globally who currently lack access to agronomists. We reduce crop losses by
             enabling early, accurate, and affordable disease detection using nothing but a smartphone
             camera.
@@ -83,7 +83,7 @@ export default function About() {
 
         <div className="text-center py-4">
           <p className="text-sm text-gray-400 italic">"Every farmer deserves access to world-class agricultural intelligence."</p>
-          <p className="text-xs text-primary font-semibold mt-1">CropCare AI Team</p>
+          <p className="text-xs text-primary font-semibold mt-1">AgriScan Team</p>
         </div>
       </div>
     </div>

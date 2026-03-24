@@ -33,9 +33,9 @@ export default function Results() {
   const isHealthy = top.severity.toLowerCase() === 'none'
 
   function handleShare() {
-    const text = `🌿 CropCare AI Diagnosis\n\nCrop: ${top.crop}\nDisease: ${top.common_name}\nConfidence: ${formatConfidence(top.confidence)}\nSeverity: ${top.severity}\n\nDiagnosed with CropCare AI 🌱`
+    const text = `🌿 AgriScan Diagnosis\n\nCrop: ${top.crop}\nDisease: ${top.common_name}\nConfidence: ${formatConfidence(top.confidence)}\nSeverity: ${top.severity}\n\nDiagnosed with AgriScan 🌱`
     if (navigator.share) {
-      navigator.share({ title: 'CropCare AI Diagnosis', text })
+      navigator.share({ title: 'AgriScan Diagnosis', text })
     } else {
       navigator.clipboard.writeText(text).then(() => alert('Result copied to clipboard!'))
     }

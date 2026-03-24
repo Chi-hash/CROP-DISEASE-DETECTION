@@ -21,12 +21,25 @@ export default function Diagnose() {
     setStage('preview')
   }
 
+  /** Convert a Blob/File to a base64 data URL so it survives localStorage. */
+  function blobToDataURL(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = reject
+      reader.readAsDataURL(blob)
+    })
+  }
+
   async function handleAnalyze() {
     if (!selectedFile) return
     setStage('analyzing')
     try {
       const compressed = await compressImage(selectedFile)
       const result = await predictDisease(compressed)
+
+      // Convert compressed image to a persistent data URL for history storage
+      const persistentPreview = await blobToDataURL(compressed)
 
       const record: DiagnosisRecord = {
         id: crypto.randomUUID(),
@@ -35,12 +48,12 @@ export default function Diagnose() {
         disease_name: result.top_prediction.common_name,
         confidence: result.top_prediction.confidence,
         severity: result.top_prediction.severity,
-        image_preview: preview,
+        image_preview: persistentPreview,
         result,
       }
       saveToHistory(record)
 
-      navigate('/results', { state: { result, preview } })
+      navigate('/results', { state: { result, preview: persistentPreview } })
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Analysis failed. Please try again.'
       setErrorMsg(message.includes('Network') ? 'Cannot connect to server. Make sure the backend is running.' : message)

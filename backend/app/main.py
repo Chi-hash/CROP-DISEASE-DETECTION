@@ -19,7 +19,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="CropCare AI API",
+    title="AgriScan API",
     description="AI-powered crop disease detection for smallholder farmers",
     version="1.0.0",
     lifespan=lifespan,
@@ -48,14 +48,14 @@ def health_check():
         status="healthy",
         model_version="1.0.0-demo",
         disease_count=disease_service.get_disease_count(),
-        message="CropCare AI is running. Upload a leaf image to /predict to get started.",
+        message="AgriScan is running. Upload a leaf image to /predict to get started.",
     )
 
 
 @app.get("/", tags=["system"])
 def root():
     return {
-        "name": "CropCare AI API",
+        "name": "AgriScan API",
         "version": "1.0.0",
         "docs": "/docs",
         "health": "/health",

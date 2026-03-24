@@ -1,11 +1,11 @@
-# CropCare AI — Presentation Notes
+# AgriScan — Presentation Notes
 ### Hackathon Edition · March 2026
 
 ---
 
 ## 1. What We Built (The Elevator Pitch)
 
-**CropCare AI** is a web application that lets any farmer take a photo of a sick crop leaf and receive an instant AI-powered disease diagnosis — complete with the disease name, confidence score, severity rating, and a full treatment plan — in under 10 seconds.
+**AgriScan** is a web application that lets any farmer take a photo of a sick crop leaf and receive an instant AI-powered disease diagnosis — complete with the disease name, confidence score, severity rating, and a full treatment plan — in under 10 seconds.
 
 > **One-liner:** "We put an agronomist in every farmer's pocket."
 
@@ -30,7 +30,7 @@ There are three root causes:
 
 ## 3. Our Solution
 
-CropCare AI is a **3-tap diagnosis flow**:
+AgriScan is a **3-tap diagnosis flow**:
 1. Open the app
 2. Take or upload a photo of the affected leaf
 3. Get a full diagnosis and treatment plan
@@ -316,7 +316,7 @@ On the same WiFi network, open: **http://[your-computer-ip]:5173**
 
 ## 13. Impact Statement
 
-> **CropCare AI is designed to evolve from a hackathon tool into a continental agricultural intelligence platform — ultimately reducing smallholder crop loss by 30% across Sub-Saharan Africa and South Asia within 5 years.**
+> **AgriScan is designed to evolve from a hackathon tool into a continental agricultural intelligence platform — ultimately reducing smallholder crop loss by 30% across Sub-Saharan Africa and South Asia within 5 years.**
 
 ### The Numbers
 - **500 million+** smallholder farmers targeted globally
@@ -344,4 +344,4 @@ On the same WiFi network, open: **http://[your-computer-ip]:5173**
 
 ---
 
-*Built with ❤️ for farmers worldwide. CropCare AI · Hackathon Edition · March 2026*
+*Built with ❤️ for farmers worldwide. AgriScan · Hackathon Edition · March 2026*

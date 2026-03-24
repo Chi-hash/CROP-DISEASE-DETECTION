@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import type { Disease } from '../types'
 import SeverityBadge from './SeverityBadge'
+import { getAssetUrl } from '../utils/api'
 
 interface Props {
   disease: Disease
@@ -31,7 +32,7 @@ export default function DiseaseCard({ disease }: Props) {
       <div className="h-24 lg:h-32 bg-gradient-to-br from-primary to-accent flex items-center justify-center relative overflow-hidden">
         {!imgError ? (
           <img
-            src={disease.image_url}
+            src={getAssetUrl(disease.image_url)}
             alt={disease.common_name}
             className="w-full h-full object-cover"
             onError={() => setImgError(true)}

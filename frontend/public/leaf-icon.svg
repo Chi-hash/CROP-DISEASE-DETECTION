@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#1A5C38"/>
+  <!-- Leaf shape -->
+  <path d="M32 10 C32 10, 50 18, 50 36 C50 48, 40 54, 32 54 C24 54, 14 48, 14 36 C14 18, 32 10, 32 10 Z"
+        fill="#4CAF50" opacity="0.9"/>
+  <!-- Leaf vein - center -->
+  <path d="M32 52 C32 52, 32 24, 32 12"
+        stroke="#1A5C38" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Leaf veins - left -->
+  <path d="M32 38 C32 38, 22 34, 18 28"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 44 C32 44, 20 40, 16 35"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 30 C32 30, 24 26, 21 20"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <!-- Leaf veins - right -->
+  <path d="M32 38 C32 38, 42 34, 46 28"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 44 C32 44, 44 40, 48 35"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 30 C32 30, 40 26, 43 20"
+        stroke="#1A5C38" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <!-- Scan line overlay to hint at AI/tech -->
+  <line x1="20" y1="36" x2="44" y2="36" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5" stroke-dasharray="3 2"/>
+</svg>

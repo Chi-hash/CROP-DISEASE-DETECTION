@@ -1,12 +1,18 @@
 import type { DiagnosisRecord } from '../types'
 
-const STORAGE_KEY = 'cropcare_history'
+const STORAGE_KEY = 'agriscan_history'
 const MAX_RECORDS = 10
 
 export function getHistory(): DiagnosisRecord[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? JSON.parse(raw) : []
+    if (!raw) return []
+    const records: DiagnosisRecord[] = JSON.parse(raw)
+    // Strip any records whose preview is a dead blob URL (can't survive page refresh)
+    return records.map(r => ({
+      ...r,
+      image_preview: r.image_preview?.startsWith('blob:') ? '' : r.image_preview,
+    }))
   } catch {
     return []
   }

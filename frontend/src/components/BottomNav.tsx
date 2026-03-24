@@ -59,8 +59,8 @@ export default function BottomNav() {
       <div className="max-w-5xl mx-auto flex items-center md:justify-between md:px-8 justify-around">
         {/* Logo - only visible on desktop */}
         <NavLink to="/" className="hidden md:flex items-center gap-2 text-primary font-bold text-lg py-4">
-          <span className="text-2xl">🌱</span>
-          CropCare AI
+          <img src="/leaf-icon.svg" alt="AgriScan" className="w-8 h-8" />
+          AgriScan
         </NavLink>
 
         {/* Nav links */}
