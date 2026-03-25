@@ -51,7 +51,7 @@ export default function Results() {
           </svg>
           Back
         </button>
-        <h1 className="text-2xl font-bold">{isHealthy ? '✅ Plant is Healthy!' : '🔍 Disease Detected'}</h1>
+        <h1 className="text-2xl font-bold">{isHealthy ? '✅ Plant is Healthy!' : 'Disease Detected'}</h1>
         <p className="text-white/80 text-sm mt-1">
           {isHealthy ? 'No disease found. Keep up your good farming practices.' : 'Review the diagnosis and treatment plan below.'}
         </p>
