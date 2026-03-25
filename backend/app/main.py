@@ -65,3 +65,7 @@ def root():
         "docs": "/docs",
         "health": "/health",
     }
+
+
+# Vercel + Mangum(lifespan="off") does not run the lifespan hook — ensure data is loaded
+disease_service.load_diseases()
