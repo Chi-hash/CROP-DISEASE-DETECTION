@@ -36,13 +36,11 @@ app.add_middleware(
 app.include_router(predict.router)
 app.include_router(diseases.router)
 
-# Serve disease images as static files.
-# Checks both the local dev path (backend/static) and the Vercel lambda bundle path.
+# Disease library images: `public/static` (Vercel CDN + local uvicorn) or legacy `static/`.
 _base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-static_dir = os.path.join(_base, "static")
-if not os.path.isdir(static_dir):
-    # Vercel bundles files relative to the repo root inside the lambda
-    static_dir = os.path.join(_base, "..", "static")
+_public_static = os.path.join(_base, "public", "static")
+_legacy_static = os.path.join(_base, "static")
+static_dir = _public_static if os.path.isdir(_public_static) else _legacy_static
 if os.path.isdir(static_dir):
     app.mount("/static", StaticFiles(directory=os.path.abspath(static_dir)), name="static")
 
@@ -65,7 +63,3 @@ def root():
         "docs": "/docs",
         "health": "/health",
     }
-
-
-# Vercel + Mangum(lifespan="off") does not run the lifespan hook — ensure data is loaded
-disease_service.load_diseases()
